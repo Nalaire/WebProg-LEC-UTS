@@ -1,5 +1,5 @@
 # WebProg-LEC-UTS
-To-Do-List
+Event
 
 Group : ENDC
 
