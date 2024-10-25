@@ -1,0 +1,82 @@
+public lom kelar, file yang diluar admin dan database subject to change, :D
+
+change log0:
+Admin + DB harusnya aman
+Public lom kelar
+ad README, tambahan change log disana kalo niat
+
+change Log1:
+1. dashboard.php (header('Location: ../login.php) changed to header('Location: ../public/login.php') as the file login.php does not directly exist within /utslec/ directory)
+
+change log2:
+1. config.php(added pdo method of calling the server)
+2. removed utslec.sql (since it seems like it did not get used)
+3. change log1 is cancelled, login.php is added to utslec instead
+4. login.php written from ground up since the one in public seems to be a process and not a login page
+5. add login_process in utslec/ from the ground up
+6. added register and register process in utslec/ from the ground up
+7. reworked the dashboard system, because the previous dashboard system is not the same as what the professor told us to make. (but the legacy version will be left untouch and accessible for now)
+8. admin temporary feature: debug_mode (allow access to some stuff the admin is not meant to access, this feature might get removed)
+
+change log3:
+1. admin/dashboard.php (admin verification is now done by first going through 'defined' check, then if its value is true, but since MySQL Boolean is consisting of 0 and 1, and php '!== true' will only accept data type that is true instead of 1, so i swapped true with 1)
+
+change log4:
+1. applied all changes in change log 3 to all php admin verification in admin/ files
+2. includes/navbar.php(removing session_start())
+3. utslec/dashboard.php (inserted all the admin button links)
+
+change log5:
+1. utslec/dashboard.php (added mdb ui kit script, common bug: all button now increase in size on click, but this is needed for the navbar to work as intended)
+
+change log6:
+1. fixed the user side's dashboard. (button inside page content before change: [Events, Profile], now: [Browse Events])
+
+change log7:
+1. completely rehaul dashboard to serve both role
+2. skim navbar from dashboard to be reusable (as include file)
+3. admin's dashboard able to see total participant FOR EACH EVENT
+4. renaming file in public folder for easier organization
+5. updated event_detail to make sure event detail that is accessed is only for event status = 'open'
+6. moved debug mode into admin folder
+7. set hidden input in event detail to read only so attacker cannot change the target of registration
+8. complete modificaton on event detail to accept the new table design.
+9. (! NEED TESTING) attempt to format event detail
+10. (! NEED TESTING) fix the flaw in which query failed because modification on id
+11. (NEW FEATURE) added Updated At details feature i guess... update_at can now be null, and event detail dont mention update unless if someone actually made an update on the event.
+12. navbar include file split into 2, the navbar2.php is used in user folder or admin folder because of the dot DX
+13. (NEW FEATURE) added a page to view account's detail, for both role
+14. finished event detail core (not stylished)
+15. fixed the problem where cancel is missed caused by undefined array key. now sql query's row contain all the query column
+16. finished cancelation core (not stylished)
+17. finished display registered event core (not stylished)
+
+change log 8:
+1. just decoration
+
+change log 9 eric:
+1. file affected:
+    - account_detail, added history for user, stylished
+    - event_registered, isi table head diganti jadi bahasa inggris
+    - navbar and navbar2, added new list to user's link, account_edit
+    - account_register_process.php, now name doesnt have to be unique
+2. new file, account_edit.php in user, done but no style...
+
+change log10 charlos:
+1. Admin Dashboard (Added Create Event)
+2. Added Back Option for everything in Admin folder
+3. Added images folder to store event_images
+4. Dashboard update, you can now see the images
+5. Fixed Create Event
+6. Removed Event Registration for Admin in Navbar
+7. Event Management Is Now Almost Fully Adjusted (Event Description Pain)
+
+change log11:
+1. all admin (except admin/dashboard.php) has been stylized
+2. fixed navbar 2 (missing some of the nav-item for admin)
+3. event_registered.php (styled)
+4. admin/dashboard.php (removed)
+5. account_edit.php (styled)
+
+change log12:
+1. event_registered.php (added alertbox for unregistering from event)

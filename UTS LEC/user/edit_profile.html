@@ -1,0 +1,7 @@
+<form action="edit_profile.php" method="POST">
+    <input type="text" name="name" placeholder="Nama Baru" value="<?= htmlspecialchars($user['name']) ?>" required>
+    <input type="email" name="email" placeholder="Email Baru" value="<?= htmlspecialchars($user['email']) ?>" required>
+    <input type="password" name="password" placeholder="Password Baru (opsional)">
+    <button type="submit">Update Profil</button>
+  </form>
+  
