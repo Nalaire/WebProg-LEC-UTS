@@ -1,5 +1,5 @@
 # WebProg-LEC-UTS
-Event
+Event Management System
 
 Group : ENDC
 
